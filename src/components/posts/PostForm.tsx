@@ -432,11 +432,9 @@ export default function PostForm({ post, cuentas, defaultValues }: Props) {
                           <p className="text-xs text-gray-400">{formatBytes(f.tamano)} · {f.tipo}</p>
                         </div>
                         <div className="flex gap-1 ml-2 shrink-0">
-                          <Button type="button" variant="ghost" size="icon" asChild title="Descargar">
-                            <a href={f.url} download target="_blank" rel="noopener noreferrer">
-                              <Download className="h-4 w-4 text-indigo-600" />
-                            </a>
-                          </Button>
+                          <a href={f.url} download target="_blank" rel="noopener noreferrer" className="h-9 w-9 inline-flex items-center justify-center rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 text-indigo-600" title="Descargar">
+                            <Download className="h-4 w-4" />
+                          </a>
                           <Button type="button" variant="ghost" size="icon" className="text-red-500 hover:text-red-700 hover:bg-red-50" onClick={() => handleRemoveFile(i)} title="Eliminar">
                             <Trash2 className="h-4 w-4" />
                           </Button>
